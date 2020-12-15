@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: "/gatsbyjs",
+  pathPrefix: "/",
   siteMetadata: {
     title: `anto-pv.github.io`,
     description: `My portfolio website`,
