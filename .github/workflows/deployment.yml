@@ -14,4 +14,4 @@ jobs:
         with:
           access-token: ${{ secrets.DEPLOY_SITE }}
           gatsby-args: --prefix-paths
-          deploy-branch: main
+          deploy-branch: master

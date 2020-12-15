@@ -26,6 +26,7 @@
   ],
   "license": "0BSD",
   "scripts": {
+    "build": "gatsby build",
     "develop": "gatsby develop",
     "deploy": "npm build && gh-pages -d public -b master ",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
