@@ -1,7 +1,7 @@
 module.exports = {
   pathPrefix: "/",
   siteMetadata: {
-    title: `anto-pv.github.io`,
+    title: `Anto P V`,
     description: `My portfolio website`,
     author: `@anto-pv`,
   },
@@ -16,6 +16,12 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+          implementation: require('sass')
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
