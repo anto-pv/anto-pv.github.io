@@ -26,8 +26,8 @@
   ],
   "license": "0BSD",
   "scripts": {
-    "build": "gatsby build --prefix-paths && gh-pages -d public",
     "develop": "gatsby develop",
+    "deploy": "yarn build && gh-pages -d public -b master ",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
