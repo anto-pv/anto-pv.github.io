@@ -1,11 +1,10 @@
-
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
+import { FaRegHeart } from 'react-icons/fa';
 import Header from "./header"
 import "./layout.css"
-
+/*react icons link https://react-icons.github.io/react-icons*/
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -31,9 +30,9 @@ const Layout = ({ children }) => {
         <footer style={{
           marginTop: `2rem`
         }}>
-          © {new Date().getFullYear()}, Built with
+         Built with
           {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+          <FaRegHeart /> © 2020
         </footer>
       </div>
     </>
