@@ -7,6 +7,8 @@ html {
 }
 body {
   margin: 0;
+  overflow:auto;
+  position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: hsla(0, 0%, 0%, 0.8);
@@ -24,7 +26,15 @@ aside,
 details,
 figcaption,
 figure,
-footer,
+footer{
+  position: relative;
+  right: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+  bottom: 0;
+}
 header,
 main,
 menu,

@@ -3,7 +3,24 @@ import PropTypes from "prop-types"
 import React from "react"
 import headerstyles from "./header.module.scss"
 
-const Header = ({ siteTitle }) => (
+const Header = ({ title,siteTitle }) => {
+  const list=()=>{
+    if(title==="Blog" || title==="Portfolio"){
+      return(<ul className={headerstyles.navList}>
+        <li><Link className={headerstyles.navItem} activeClassName={headerstyles.activeNavItem} to="/">Home</Link></li>
+      <li><Link className={headerstyles.navItem} activeClassName={headerstyles.activeNavItem} to="/blog">Blog</Link></li>
+      <li><Link className={headerstyles.navItem} activeClassName={headerstyles.activeNavItem} to="/portfolio">Portfolio</Link></li>
+      </ul>);
+    }else{
+      return(<ul className={headerstyles.navList}>
+      <li><Link className={headerstyles.navItem} activeClassName={headerstyles.activeNavItem} to="/">Home</Link></li>
+      <li><Link className={headerstyles.navItem} activeClassName={headerstyles.activeNavItem} to="/blog">Blog</Link></li>
+      <li><Link className={headerstyles.navItem} activeClassName={headerstyles.activeNavItem} to="/portfolio">Portfolio</Link></li>
+      <li><a className={headerstyles.navItem} activeClassName={headerstyles.activeNavItem} href="#contact">Contact</a></li>
+      </ul>)
+    }
+  }
+  return(
   <header
     style={{
       background: `rebeccapurple`,
@@ -28,15 +45,10 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
-      <ul className={headerstyles.navList}>
-      <li><Link className={headerstyles.navItem} activeClassName={headerstyles.activeNavItem} to="/">Home</Link></li>
-      <li><Link className={headerstyles.navItem} activeClassName={headerstyles.activeNavItem} to="/blog">Blog</Link></li>
-      <li><Link className={headerstyles.navItem} activeClassName={headerstyles.activeNavItem} to="/about">About</Link></li>
-      <li><Link className={headerstyles.navItem} activeClassName={headerstyles.activeNavItem} to="/contact">Contact</Link></li>
-    </ul>
+        {list()}
     </div>
   </header>
-)
+)};
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
