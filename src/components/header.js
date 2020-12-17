@@ -5,7 +5,7 @@ import headerstyles from "./header.module.scss"
 
 const Header = ({ title,siteTitle }) => {
   const list=()=>{
-    if(title==="Blog" || title==="Portfolio"){
+    if(title==="Blog" || title==="Portfolio" || title==="404: Not found"){
       return(<ul className={headerstyles.navList}>
         <li><Link className={headerstyles.navItem} activeClassName={headerstyles.activeNavItem} to="/">Home</Link></li>
       <li><Link className={headerstyles.navItem} activeClassName={headerstyles.activeNavItem} to="/blog">Blog</Link></li>
@@ -16,7 +16,7 @@ const Header = ({ title,siteTitle }) => {
       <li><Link className={headerstyles.navItem} activeClassName={headerstyles.activeNavItem} to="/">Home</Link></li>
       <li><Link className={headerstyles.navItem} activeClassName={headerstyles.activeNavItem} to="/blog">Blog</Link></li>
       <li><Link className={headerstyles.navItem} activeClassName={headerstyles.activeNavItem} to="/portfolio">Portfolio</Link></li>
-      <li><a className={headerstyles.navItem} activeClassName={headerstyles.activeNavItem} href="#contact">Contact</a></li>
+      <li><a className={headerstyles.navItem} href="#contact">Contact</a></li>
       </ul>)
     }
   }
