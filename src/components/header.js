@@ -2,8 +2,9 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import headerstyles from "./header.module.scss"
+import logo from "../images/icon.jpg"
 
-const Header = ({ title,siteTitle }) => {
+const Header = ({ title }) => {
   const list=()=>{
     if(title==="Blog" || title==="Portfolio" || title==="404: Not found"){
       return(<ul className={headerstyles.navList}>
@@ -23,11 +24,11 @@ const Header = ({ title,siteTitle }) => {
   return(
   <header
     style={{
-      background: `rebeccapurple`,
+      background: `white`,
       marginBottom: `1.45rem`,
     }}
   >
-    <div
+    <div id = "header"
       style={{
         margin: `0 auto`,
         maxWidth: 960,
@@ -42,7 +43,7 @@ const Header = ({ title,siteTitle }) => {
             textDecoration: `none`,
           }}
         >
-          {siteTitle}
+        <img src = {logo} alt="logo"></img>
         </Link>
       </h1>
         {list()}
