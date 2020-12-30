@@ -15,6 +15,7 @@ module.exports = {
       }
     },
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-mailgo`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

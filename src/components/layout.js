@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Header from "./header"
-import "./layout.module.scss"
 import Footer from "./Index/Footer";
 /*react icons link https://react-icons.github.io/react-icons
 for bootstrap go for react-bootstrap documentation*/
