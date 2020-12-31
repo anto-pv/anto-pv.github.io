@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 
 const SecondPage = () => {
   const data = useStaticQuery(graphql`
-    query MyQuery {
+    query {
       allContentfulBlogPost(sort: {fields: publishedDate, order: DESC}) {
         edges {
           node {

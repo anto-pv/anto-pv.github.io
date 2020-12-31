@@ -3,7 +3,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions
     const blogTemplate = path.resolve('./src/templetes/blog.js')
     const res = await graphql(`
-        query MyQuery {
+        query {
             allContentfulBlogPost {
             edges {
                 node {

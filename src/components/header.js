@@ -5,7 +5,7 @@ import logo from "../images/icon.jpg"
 
 const Header = ({ title }) => {
   const list=()=>{
-    if(title==="Blog" || title==="Portfolio" || title==="404: Not found"){
+    if(title!=="Home"){
       return(<div className="nav-list">
         <Link className="nav-item" to="/">Home</Link>
         <Link className="nav-item" to="/blog">Blog</Link>

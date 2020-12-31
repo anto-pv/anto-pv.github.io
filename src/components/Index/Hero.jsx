@@ -1,12 +1,20 @@
 import React,{useState,useEffect} from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Fade from 'react-reveal/Fade';
-import Title from '../Index/Title';
+import Title from './Title';
 //import AboutImg from '../Image/AboutImg';
-import { Link } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 import Image from '../image';
 
 const Hero = () => {
+  const data = (useStaticQuery(graphql`
+  query MyQuery {
+    allContentfulPortfolio {
+        nodes {
+          prtfolioLink
+        }
+    }
+  }`))
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -19,7 +27,6 @@ const Hero = () => {
       setIsDesktop(false);
     }
   }, []);
-
   return (
     <div>
     <section id="hero" className="jumbotron">
@@ -40,7 +47,7 @@ const Hero = () => {
               </Link>
             </span>
             <span className="cta-btn cta-btn--hero">
-              <Link to="https://drive.google.com/file/d/1LMt5V2u6dxe_aQWKABUUxBYF9rIHrmJG/view?usp=sharing" smooth duration={1000}>
+              <Link to={data.allContentfulPortfolio.nodes[0].prtfolioLink} smooth duration={1000}>
                 Resume
               </Link>
             </span>
@@ -77,7 +84,7 @@ const Hero = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="cta-btn cta-btn--resume"
-                      href={'https://drive.google.com/file/d/1LMt5V2u6dxe_aQWKABUUxBYF9rIHrmJG/view?usp=sharing'}
+                      href={data.allContentfulPortfolio.nodes[0].prtfolioLink}
                     >
                       Resume
                     </a>
