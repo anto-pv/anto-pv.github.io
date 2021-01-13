@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import '../style/main.scss'
 
 const SecondPage = () => {
   const data = useStaticQuery(graphql`
@@ -20,6 +21,7 @@ const SecondPage = () => {
   return(
     <Layout>
       <SEO title="Blog" />
+      <section id="blog">
       <h1>Blog</h1>
       <ul>
         {data.allContentfulBlogPost.edges.map((edge) => {
@@ -33,7 +35,7 @@ const SecondPage = () => {
           )
         })
         }
-      </ul>
+      </ul></section>
       <Link to="/">Go back to the homepage</Link>
     </Layout>
   )

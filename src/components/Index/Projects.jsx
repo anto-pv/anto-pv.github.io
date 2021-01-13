@@ -14,9 +14,6 @@ const Projects = () => {
         node {
           id
           projectTitle
-          image {
-            json
-          }
           info{
             json
           }
@@ -25,6 +22,12 @@ const Projects = () => {
           }
           demoLink
           codeLink
+          image {
+            file {
+              url
+            }
+            description
+          }
         }
       }
     }
@@ -114,7 +117,7 @@ const Projects = () => {
                           }}
                         >
                           <div data-tilt className="thumbnail rounded">
-                            {/*<ProjectImg alt={'title'} filename={'img'} />*/}
+                            <img src={edge.node.image.file.url} alt={edge.node.image.description} style={{height: "500px", width: "500px"}}/>
                           </div>
                         </Tilt>
                       </a>

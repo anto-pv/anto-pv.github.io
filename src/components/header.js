@@ -5,17 +5,8 @@ import logo from "../images/icon.jpg"
 
 const Header = ({ title }) => {
   const list=()=>{
-    if(title!=="Home"){
+    if(title === "Home"){
       return(<div className="nav-list">
-        <Link className="nav-item" to="/">Home</Link>
-        <Link className="nav-item" to="/blog">Blog</Link>
-        <Link className="nav-item" activeClassName="active-nav-item" to="/portfolio">Portfolio</Link>
-      </div>);
-    }else{
-      return(<div className="nav-list">
-        <Link className="nav-item" activeClassName="active-nav-item" to="/">Home</Link>
-        <Link className="nav-item" to="/blog">Blog</Link>
-        <Link className="nav-item" to="/portfolio">Portfolio</Link>
         <a className="nav-item" href="#contact">Contact</a>
       </div>)
     }
@@ -28,6 +19,9 @@ const Header = ({ title }) => {
       >
       <img src = {logo} alt="logo" className="header-logo"></img>
       </Link></li>
+      <li><Link className="nav-item" activeClassName="active-nav-item" to="/">Home</Link></li>
+      <li><Link className="nav-item" activeClassName="active-nav-item" to="/blog">Blog</Link></li>
+      <li><Link className="nav-item" activeClassName="active-nav-item" to="/skills">Skills</Link></li>
       <li>{list()}</li></ul>
   </header>
 )};

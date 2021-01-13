@@ -1,6 +1,5 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 export const query = graphql`
@@ -8,23 +7,26 @@ export const query = graphql`
         contentfulBlogPost(slug: {eq:$slug}) {
             title
             publishedDate(formatString: "MMMM Do, YYYY")
+            keys
+            image {
+                id
+                file {
+                  url
+                }
+                description
+            }
             body {
                 json
-            }
-            keys
+                }
         }
     }
 `
 const Blogtemp = (props) =>{
-    const options = {
-        renderNode: {
-            "embedded-asset-block": (node) => {
-                const alt = node.data.target.fields.title[`en-US`]
-                const url = node.data.target.fields.file[`en-US`].url
-                const link = node.data.target.fields.description[`en-US`]
-                return <Link to={link}><img alt={alt} src={url} /></Link>
-            }
-        }
+    const blogimage = (image) => {
+        if(image !== null){
+            return(<div>
+            <img src={image.file.url} alt={image.description}></img>
+        </div>);}
     }
     return(
     <Layout>
@@ -33,8 +35,8 @@ const Blogtemp = (props) =>{
         <p>{props.data.contentfulBlogPost.publishedDate}
         </p>
         {props.data.contentfulBlogPost.keys}
-        {documentToReactComponents(props.data.contentfulBlogPost.body.json, options)}
-        <Link to="/contact">Detail</Link>
+        {blogimage(props.data.contentfulBlogPost.image)}
+        {props.data.contentfulBlogPost.body.json.content[0].content[0].value}
     </Layout>
     )
     }

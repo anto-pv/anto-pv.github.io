@@ -71,10 +71,11 @@ const Hero = () => {
               <div className="about-wrapper__info">
                 <p className="about-wrapper__info-text">
                   {
-                    'I will fill this later'}
+                    'I am  Computer Science Student at Mar Athanasius College of Engineering, Kothmangalam '}
                 </p>
                 <p className="about-wrapper__info-text">
-                I will fill this later
+                {
+                  'Address: Punneliparambil(H),Kombodinjamakkal,P O Thzhekkad, Thrissur, Kerala'}
                 </p>
                 <p className="about-wrapper__info-text">
                   {'I will fill this later'}
