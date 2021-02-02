@@ -16,7 +16,131 @@
   z-index: -1;
 
   // If you want to set a background image on the hero section, uncomment these with yout custom image
+// frame type ('wrap' 'white' 'black')
+$type: 'wrap';
 
+// canvas (image) width
+$canvasWidth: 450px;
+
+// canvas (image) height
+$canvasHeight: 240px;
+
+// depth of canvas frame
+$canvasDepth: 13px;
+
+
+// MIXINS
+////////////////////////////////////
+// mixin for psudeo elements
+@mixin psudeo(){
+	display: block;
+	content: "";
+	position: absolute;
+}
+
+// mixin for right frame
+@mixin rightFrame(){
+	transform: scaleX(-1) skew(0, 45deg);
+	transform-origin: 0% 50%;
+	margin-left: $canvasDepth;
+	margin-top: -$canvasDepth;
+	left: 100%;
+	
+	// if frame type = wrap, 
+	// include background image and apply shadow
+	@if $type == 'wrap' {
+		@include backgroundImage();
+		&:after {
+			@include psudeo();
+			position: absolute;
+			width: $canvasDepth;
+			height: $canvasHeight;
+			background: rgba(#000, 0.38);
+		}
+		
+	// if frame type = white
+	// set background to light grey
+   } @else if $type == 'white' {
+      background: #999;
+		
+	// if frame type = black
+	// set background to dark grey
+   } @else if $type == 'black' {
+      background: #111;
+   }
+}
+
+// mixin for top frame styles
+@mixin topFrame(){
+	transform: scaleY(-1) skew(45deg, 0);
+	transform-origin: 0% 50%;
+	margin-left: $canvasDepth/2;
+	top: -$canvasDepth;
+	
+	// if frame type = wrap, 
+	// include background image and apply shadow
+	@if $type == 'wrap' {
+		@include backgroundImage();
+		// shadow
+		&:after {
+			@include psudeo();
+			position: absolute;
+			width: $canvasWidth;
+			height: $canvasDepth;
+			background: rgba(#000, 0.25);
+		}
+		
+	// if frame type = white
+	// set background to light grey
+   } @else if $type == 'white' {
+      background: #C5C5C5;
+		
+	// if frame type = black
+	// set background to dark grey
+   } @else if $type == 'black' {
+      background: #282828;
+   }
+}
+
+// mixin for background-image settings
+@mixin backgroundImage(){
+	background-image: url(https://github.com/anto-pv/anto-pv.github.io/blob/dev/src/images/profile.jpg?raw=true);
+	background-size: cover;
+	background-position: top right;
+}
+
+
+
+// STYLES
+////////////////////////////////////
+body {
+	width: 100%;
+	margin: 120px auto;
+	background: #f1f1f1;
+}
+
+.canvas {
+	@include backgroundImage();
+	margin: -($canvasDepth/2) auto auto;
+	position: relative;
+	width: $canvasWidth;
+	height: $canvasHeight;
+	box-shadow: 5px 0px 25px 3px #000;
+	// top frame
+	.top {
+		@include psudeo();
+		@include topFrame();
+		width: $canvasWidth;
+		height: $canvasDepth;
+	}
+	// right frame
+	.right {
+		@include psudeo();
+		@include rightFrame();
+		width: $canvasDepth;
+		height: $canvasHeight;
+	}
+}
   /* background: url("/src/assets/[your-image].png");
   background-position: center;
   background-size: cover; */
