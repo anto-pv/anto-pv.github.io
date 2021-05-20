@@ -1,0 +1,95 @@
+#header{
+    display: flex;
+    img{
+        width: 13%;
+        margin-left: 6%;
+    }
+    .nav-links{
+        padding: 0 0 0 0;
+        width: 90%;
+        margin: 0 5% 0 10%;
+        display: flex;
+        list-style: none; 
+        color: $textprim;
+        align-items: center;
+        justify-content: space-between;
+        @include respond(tab-land) {
+            font-size: 25px;
+        }
+    }
+    .nav-links li a {
+        color: $textprim;
+        text-decoration: none;
+        font-size: 26px;
+        font-weight: 600;
+    }
+    .nav-links li a:hover{
+        color: $colsec;
+    }
+    @include respond(tab-port) {
+        position: fixed;
+        z-index: 5;
+        background-color: $colprim;
+        width: 100%;
+        .line{
+            width: 30px;
+            height: 3px;
+            background-color: $textprim;
+            margin:5px;
+        }
+        .hamburger{
+            position: absolute;
+            cursor: pointer;
+            right: 5%;
+            top: 50%;
+            transform: translate(-5%, -50%);
+            z-index: 5;
+        }
+        .nav-links{
+            position: fixed;
+            z-index: 2;
+            margin: 0;
+            padding: 0;
+            justify-content: space-around;
+            background-color: $colsec;
+            color:white;
+            height: 100vh;
+            width: 100%;
+            flex-direction: column;
+            clip-path: circle(100px at 115% -10%);
+            -webkit-clip-path: circle(100px at 115% -10%);
+            transition: all 1s ease-out;
+            pointer-events: none;
+        }
+        .nav-links.open{
+            clip-path: circle(1000px at 90% -10%);
+            -webkit-clip-path: circle(1000px at 90% -10%);
+            pointer-events: all;
+        }
+        .nav-links li{
+            opacity: 0;
+        }
+        .nav-links li a {
+            font-size: 25px;
+            color: $textsec;
+        }
+        .nav-links li a:hover{
+            color: $textprim;
+        }
+        .nav-links li:nth-child(1){
+            transition:  all 0.5s ease 0.4s;
+        }
+        .nav-links li:nth-child(2){
+            transition:  all 0.5s ease 0.4s;
+        }
+        .nav-links li:nth-child(3){
+            transition:  all 0.5s ease 0.4s;
+        }
+        .nav-links li:nth-child(4){
+            transition:  all 0.5s ease 0.4s;
+        }
+        li.fade{
+            opacity: 1;
+        }
+    }
+}

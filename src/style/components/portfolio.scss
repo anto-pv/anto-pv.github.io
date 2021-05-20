@@ -1,0 +1,159 @@
+#portfolio{
+    h1{
+        font-size: 50px;
+        font-weight: bold;
+        text-align: center;
+        @include respond(tab-port) {
+            font-size: 28px;
+        }
+    }
+    #me{
+        #meimage{
+            width: 21%;
+            margin: 2% 9% 6% 8%;
+            @include respond(tab-land) {
+                width: 35%;
+                margin: 2% 4% 6% 3%;
+            }
+        }
+        #name{
+            width: 90%;
+            margin: 4% 4% 2% 4%;
+            @include respond(tab-land) {
+                width: 70%;
+                height: 30%;
+            }
+            @include respond(tab-port) {
+                width:80%;
+                height: 40%;
+                margin: 7% 0 0 9%;
+            }
+        }
+        justify-content: center;
+        .box{
+            background-color: $colprim;
+            box-shadow: inset -2px -4px 21px -1px rgba(71, 87, 225, 0.25);
+            display: flex;
+            flex-direction: row;
+            padding-bottom: 3%;
+            padding-top: 3%;
+            width: 90%;
+            z-index: 2;
+            .medetail{
+                margin: 2% 1% 2% 6%;
+                p{
+                    margin-top: 1%;
+                    padding: 0% 0% 2% 10%;
+                    font-size: 30px;
+                    font-weight:550;
+                    @include respond(tab-land) {
+                        font-size: 25px;
+                    }
+                    @include respond(phone) {
+                        font-size: 20px;
+                        margin-top: 0;
+                        line-height: 90%;
+                    }
+                }
+                @include respond(tab-land) {
+                    width: 60%;
+                    margin-left: 3%;
+                }
+                @include respond(tab-port) {
+                    width:100%;
+                }
+            }
+            @include respond(tab-port) {
+                display: flex;
+                justify-content: space-around;
+                align-content: center;
+                align-items: center;
+                flex-direction: column-reverse;
+            }
+        }
+        display: flex;
+        flex-direction: row;
+        svg{
+            position: absolute;
+            top: 13%;
+            right: 0;
+            z-index: 3;
+            @include respond(tab-port) {
+                z-index: 1;
+                max-width: 80%;
+                height: 30%;
+            }
+        }
+        #one{
+            width: 50%;
+            z-index: 1;
+            top: 66%;
+            left: 0;
+            @include respond(tab-port) {
+                position: absolute;
+                top:28%;
+                height: 25%;
+            }
+        }
+    }
+    .blue{
+        display: flex;
+        flex-direction: column;
+        background-color: $colsec;
+        justify-content: space-around;
+        align-items: center;
+        color: $textsec;
+        div{
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            background-color: $colprim;
+            color: $textprim;
+            margin: 0 4% 3% 4%;
+            border-radius: 20px;
+            padding: 2% 0 2% 0;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            img{
+                width: 50%;
+            }
+            .detail{
+                display: flex;
+                flex-direction: row;
+                font-weight: 650;
+                font-size: 30px;
+                img{
+                    border-radius: 20px;
+                    width: 150%;
+                }
+                @include respond(tab-port) {
+                    flex-direction: column-reverse;
+                    font-size: 20px;
+                    font-weight: normal;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .skillwhite{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        div{
+            display: grid;
+            background-color: $colsec;
+            margin: 0 4% 3% 4%;
+            border-radius: 20px;
+            padding: 2% 0 2% 0;
+            align-items: center;
+            justify-content: center;
+            img{
+                margin: 1% 6% 1% 6%;
+                width: 10%;
+            }
+        }
+    }
+}

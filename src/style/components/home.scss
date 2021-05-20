@@ -1,0 +1,118 @@
+#home{
+    width: 100%;
+    #me{
+        #meimage{
+            width: 21%;
+            margin: 2% 9% 6% 8%;
+            @include respond(tab-land) {
+                width: 35%;
+                margin: 2% 4% 6% 3%;
+            }
+        }
+        #name{
+            width: 90%;
+            margin: 4% 4% 2% 4%;
+            @include respond(tab-land) {
+                width: 70%;
+                height: 30%;
+            }
+            @include respond(tab-port) {
+                width:80%;
+                height: 40%;
+                margin: 7% 0 0 9%;
+            }
+        }
+        justify-content: center;
+        .box{
+            background-color: $colprim;
+            box-shadow: inset -2px -4px 21px -1px rgba(71, 87, 225, 0.25);
+            display: flex;
+            flex-direction: row;
+            padding-bottom: 3%;
+            padding-top: 3%;
+            width: 90%;
+            z-index: 2;
+            .medetail{
+                margin: 2% 1% 2% 6%;
+                p{
+                    margin-top: 1%;
+                    padding: 0% 0% 2% 10%;
+                    font-size: 30px;
+                    font-weight:550;
+                    @include respond(tab-land) {
+                        font-size: 25px;
+                    }
+                    @include respond(phone) {
+                        font-size: 20px;
+                        margin-top: 0;
+                        line-height: 90%;
+                    }
+                }
+                @include respond(tab-land) {
+                    width: 60%;
+                    margin-left: 3%;
+                }
+                @include respond(tab-port) {
+                    width:100%;
+                }
+            }
+            @include respond(tab-port) {
+                display: flex;
+                justify-content: space-around;
+                align-content: center;
+                align-items: center;
+                flex-direction: column-reverse;
+            }
+        }
+        display: flex;
+        flex-direction: row;
+        svg{
+            position: absolute;
+            top: 13%;
+            right: 0;
+            z-index: 3;
+            @include respond(tab-port) {
+                z-index: 1;
+                max-width: 80%;
+                height: 30%;
+            }
+        }
+        #one{
+            width: 50%;
+            z-index: 1;
+            top: 66%;
+            left: 0;
+            @include respond(tab-port) {
+                position: absolute;
+                top:28%;
+                height: 25%;
+            }
+        }
+    }
+    .about{
+        background-color: $colsec;
+        margin-top: 4%;
+        padding: 3% 4% 3% 4%;
+        div{
+            background-color: $colprim;
+            color: $textprim;
+            font-size: 21px;
+            border-radius: 20px;
+            padding: 3% 3% 3% 3%;
+            @include respond(tab-port) {
+                font-size: 16px;
+            }
+        }
+    }
+    #contact{
+        background-color: $colsec;
+        border-radius: 20px;
+        margin: 3% 4% 3% 4%;
+        padding: 3% 3% 3% 3%;
+        color: $textsec;
+        font-size: 23px;
+        @include respond(tab-port) {
+            font-size: 18px;
+        }
+    }
+}

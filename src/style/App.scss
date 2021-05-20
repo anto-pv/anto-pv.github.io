@@ -1,0 +1,11 @@
+@import './components/variables.scss';
+@import './mixins';
+@import './components/header.scss';
+@import './components/sitemap.scss';
+@import './components/home.scss';
+@import './components/portfolio.scss';
+.App{
+    background-color: $colprim;
+    color: $textprim;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
