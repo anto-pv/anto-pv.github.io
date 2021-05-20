@@ -108,8 +108,8 @@
         background-color: $colsec;
         border-radius: 20px;
         margin: 3% 4% 3% 4%;
-        padding: 3% 3% 3% 3%;
         color: $textsec;
+        padding: 3% 3% 3% 3%;
         font-size: 23px;
         @include respond(tab-port) {
             font-size: 18px;
