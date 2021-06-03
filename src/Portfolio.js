@@ -18,13 +18,34 @@ import p1h from './images/projects/p1h.png';
 import p1i from './images/projects/p1i.jpg';
 
 function Portfolio() {
+  const hamger = ()=>{
+    const navLinks = document.querySelector(".option-links");
+    const links = document.querySelectorAll(".option-links li");
+    if(navLinks != null){
+       navLinks.classList.toggle("open");
+       links.forEach(link =>{
+          if(link != null){
+             link.classList.toggle("fade");
+          }
+       });
+    }
+  }
+
   return (
     <div id="portfolio">
+      <div className="hamburgerc" onClick={hamger}>
+      </div>
+      <ul className="option-links">
+         <li><a href="#projects">Projects</a></li>
+         <li><a href="#skills">Skills</a></li>
+         <li><a href="#experiences">Experiences</a></li>
+         <li><a href="#Certificates">Certificates</a></li>
+      </ul>
       <Meport/>
       <div className = "meandlink">
         
       </div>
-      <div className = "blue">
+      <div id ="projects" className = "blue">
         <h1>Projects</h1>
         <div className="content">
           <img src={p1h} alt="heading"/>
@@ -37,7 +58,7 @@ function Portfolio() {
           </div>
         </div>
       </div>
-      <div className = "skillwhite">
+      <div id="skills" className = "skillwhite">
         <h1>Skills</h1>
         <div className="language">
           <img src={cpp} alt="c plus plus"/>
@@ -63,13 +84,13 @@ function Portfolio() {
           <img src={ps} alt="photoshop"/>
         </div>
       </div>
-      <div className = "blue">
+      <div id ="experiences" className = "blue">
         <h1>Experiences</h1>
         <div className="content">
           sysbrees
         </div>
       </div>
-      <div className = "skillwhite">
+      <div id="Certificates" className = "skillwhite">
         <h1>Certificates</h1>
         <div>
           Blast of prize

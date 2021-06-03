@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import icon from '../images/icon.jpg'
 
 const Header = () => {
@@ -26,10 +26,10 @@ const Header = () => {
          <div className="line"></div>
       </div>
       <ul className="nav-links">
-         <li><Link to="/">Home</Link></li>
-         <li><Link to="/portfolio">Portfolio</Link></li>
-         <li><Link to="/">Projects</Link></li>
-         <li><Link to="#contact">Contact</Link></li>
+         <li><Link to="/" onClick={hamger}>Home</Link></li>
+         <li><Link to="/portfolio" onClick={hamger}>Portfolio</Link></li>
+         <li><a href="/portfolio#projects" onClick={hamger}>Projects</a></li>
+         <li><a href="/#contact" onClick={hamger}>Contact</a></li>
       </ul>
    </div>
    );
