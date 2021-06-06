@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import icon from '../images/icon.jpg'
 
 const Header = () => {
@@ -27,8 +28,8 @@ const Header = () => {
       <ul className="nav-links">
          <li><Link to="/" onClick={hamger}>Home</Link></li>
          <li><Link to="/portfolio" onClick={hamger}>Portfolio</Link></li>
-         <li><a href="/portfolio#projects" onClick={hamger}>Projects</a></li>
-         <li><a href="/#contact" onClick={hamger}>Contact</a></li>
+         <li><HashLink to="/portfolio#projects" onClick={hamger}>Projects</HashLink></li>
+         <li><HashLink to="/#contact" onClick={hamger}>Contact</HashLink></li>
       </ul>
    </div>
    );

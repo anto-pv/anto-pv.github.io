@@ -5,6 +5,7 @@ import linekdin from '../images/portfolio/linkedin.svg';
 import codechef from '../images/portfolio/codechef.svg';
 import hackerrank from '../images/portfolio/hackerrank.svg';
 import codeforce from '../images/portfolio/codeforces.svg';
+import { HashLink } from 'react-router-hash-link';
 
 const Meport = () => (
     <div className="me">
@@ -26,12 +27,12 @@ const Meport = () => (
                 <div className="lboxes">
                     <div className="linkbox">
                         <a className="linkbotton" target='_blank' rel="noreferrer" href="https://drive.google.com/file/d/1LMt5V2u6dxe_aQWKABUUxBYF9rIHrmJG/view?usp=sharing">Resume</a>
-                        <a className="linkbotton" href="/portfolio#skills">Skills</a>
+                        <HashLink to ="/#about" className="linkbotton">About</HashLink>
                     </div>
                     <div className="linkbox">
-                        <a className="linkbotton" href="/portfolio#projects">Projects</a>
-                        <a className="linkbotton" href="/portfolio#experiences">Experiences</a>
-                        <a className="linkbotton" href="/portfolio#Certificates">Certificates</a>
+                        <HashLink smooth to ="/portfolio#projects" className="linkbotton">Projects</HashLink>
+                        <HashLink smooth to ="/portfolio#experiences" className="linkbotton">Experiences</HashLink>
+                        <HashLink smooth to ="/portfolio/#skills" className="linkbotton" >Skills</HashLink>
                     </div>
                 </div>
             </div>

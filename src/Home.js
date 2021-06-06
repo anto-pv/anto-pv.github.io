@@ -51,7 +51,7 @@ function Home() {
   return (
     <div id = "home">
       <Me/>
-      <div className = "about">
+      <div id ="about" className = "about">
         <div><p>
         I am <b>Anto P V</b>.
         Currently in 3<sup>rd</sup> year Computer Science Undergraduate at <b>Mar Athanasius College of Engineering, kothamangalam</b>.<br/>
@@ -62,7 +62,7 @@ function Home() {
         to acquire new skills.
         </p></div>
       </div>
-      <div className="contact">
+      <div id="contact" className="contact">
         <p><img src={hand} alt="hand"/>
         Have a new project or just say hi?</p>
         Get in touch &#8594;

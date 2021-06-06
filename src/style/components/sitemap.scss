@@ -3,11 +3,11 @@
     flex-direction: row;
     padding: 5%  10%  10% 10%;
     justify-content: space-between;
-    a{
+    .sitelaink{
         text-decoration: none;
         color: $textprim;
     }
-    a:hover{
+    .sitelaink:hover{
         color: $colsec;
     }
 }

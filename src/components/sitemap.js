@@ -1,11 +1,12 @@
 import React from 'react';
+import { HashLink } from 'react-router-hash-link';
 
 const SiteMap = () => (
    <div className="sitemap">
          <b>Anto PV@2021</b>
          <ul><b><u>Site map</u></b>
-            <a href="\"><li>Home</li></a>
-            <a href= "\portfolio"><li>Portfolio</li></a>
+            <HashLink className="sitelaink" to="/#header"><li>Home</li></HashLink>
+            <HashLink className="sitelaink" to= "/portfolio#header"><li>Portfolio</li></HashLink>
          </ul>
    </div>
 );
