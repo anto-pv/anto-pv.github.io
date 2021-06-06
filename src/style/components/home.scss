@@ -4,6 +4,7 @@
         #meimage{
             width: 21%;
             margin: 2% 9% 6% 8%;
+            border-radius: 9%;
             @include respond(tab-land) {
                 width: 35%;
                 margin: 2% 4% 6% 3%;
@@ -68,11 +69,9 @@
         flex-direction: row;
         svg{
             position: absolute;
-            top: 13%;
+            z-index: 1;
             right: 0;
-            z-index: 3;
             @include respond(tab-port) {
-                z-index: 1;
                 max-width: 80%;
                 height: 30%;
             }
@@ -80,11 +79,10 @@
         #one{
             width: 50%;
             z-index: 1;
-            top: 66%;
+            align-self: center;
             left: 0;
             @include respond(tab-port) {
                 position: absolute;
-                top:28%;
                 height: 25%;
             }
         }
@@ -96,6 +94,7 @@
         div{
             background-color: $colprim;
             color: $textprim;
+            width: 70%;
             font-size: 21px;
             border-radius: 20px;
             padding: 3% 3% 3% 3%;
@@ -104,17 +103,14 @@
             }
         }
     }
-    #contact{
+    .contact{
         background-color: $colsec;
         border-radius: 20px;
         margin: 3% 4% 3% 4%;
         color: $textsec;
         padding: 3% 3% 3% 3%;
         font-size: 23px;
-        @include respond(tab-port) {
-            font-size: 18px;
-        }
-        #submit-form{
+        .formsubmit{
             display: flex;
             align-items: flex-end;
             flex-wrap: nowrap;
@@ -128,8 +124,10 @@
             height: 35px;
             margin: 1% 0 1% 0;
         }
-        #msg{
+        .tname{
+            width: 70%;
             height: 70px;
+            margin: 1% 0 1% 0;
         }
         button{
             width: 60%;
@@ -148,6 +146,42 @@
         }
         img{
             width: 30px;
+        }
+    }
+    .social{
+        display: flex;
+        background-color: $colsec;
+        align-content: space-around;
+        align-items: center;
+        justify-content: space-around;
+        padding: 4% 0 4% 0;
+        img{
+            width: 80%;
+            padding: 3% 3% 3% 3%;
+            margin: 4% 6% 4% 6%;
+        }
+    }
+    @include respond(tab-port) {
+        .about div {
+            width: auto;
+        }
+        .contact {
+            font-size: 16px;
+            line-height: 10px;
+            .fname{
+                height: 25px;
+            }
+            .tname{
+                height: 60px;
+                margin: 0;
+            }
+            button{
+                height: auto;
+                font-size: 18px;
+            }
+        }
+        .social img {
+            width: 60%;
         }
     }
 }

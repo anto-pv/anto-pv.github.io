@@ -1,6 +1,6 @@
 import React from 'react';
 import './style/App.scss';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {HashRouter as Router, Switch, Route} from 'react-router-dom';
 import Header from './components/header';
 import Portfolio from './Portfolio';
 import Home from './Home';
@@ -12,8 +12,8 @@ function App() {
       <div className="App">
         <Header/>
         <Switch>
-        <Route path="/portfolio" component= {Portfolio}/>
-        <Route path="/" exact component= {Home}/>
+          <Route path="/" exact component= {Home}/>
+          <Route path="/portfolio" exact component= {Portfolio}/>
         </Switch>
         <SiteMap/>
       </div>

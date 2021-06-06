@@ -18,43 +18,19 @@ import p1h from './images/projects/p1h.png';
 import p1i from './images/projects/p1i.jpg';
 
 function Portfolio() {
-  const hamger = ()=>{
-    const navLinks = document.querySelector(".option-links");
-    const links = document.querySelectorAll(".option-links li");
-    if(navLinks != null){
-       navLinks.classList.toggle("open");
-       links.forEach(link =>{
-          if(link != null){
-             link.classList.toggle("fade");
-          }
-       });
-    }
-  }
-
   return (
     <div id="portfolio">
-      <div className="hamburgerc" onClick={hamger}>
-      </div>
-      <ul className="option-links">
-         <li><a href="#projects">Projects</a></li>
-         <li><a href="#skills">Skills</a></li>
-         <li><a href="#experiences">Experiences</a></li>
-         <li><a href="#Certificates">Certificates</a></li>
-      </ul>
       <Meport/>
-      <div className = "meandlink">
-        
-      </div>
       <div id ="projects" className = "blue">
         <h1>Projects</h1>
         <div className="content">
           <img src={p1h} alt="heading"/>
           <div className="detail">
-            <p>This project aim to help people to buy and book services according to their
+            <p className="protext">This project aim to help people to buy and book services according to their
               needs, based on a time slot sitting at home thereby reducing the exposure to outside environment especially druing
-              this pandemic. 
+              this pandemic. <a target='_blank' rel="noreferrer" href="https://github.com/anto-pv/CloudCart.git" className="butto">Repo</a>
             </p>
-            <img src={p1i} alt=""/>
+            <img src={p1i} alt="cloudcart"/>
           </div>
         </div>
       </div>
@@ -86,14 +62,12 @@ function Portfolio() {
       </div>
       <div id ="experiences" className = "blue">
         <h1>Experiences</h1>
-        <div className="content">
-          sysbrees
-        </div>
-      </div>
-      <div id="Certificates" className = "skillwhite">
-        <h1>Certificates</h1>
-        <div>
-          Blast of prize
+        <div className="expcontent">
+          <p className="company"><span className="point">&#10063;</span>Sysbreeze Technologies, Kinfra Techno Park, Kozhikode</p>
+          <p className="post">Post:<b> Intern</b></p>
+          <p className="post">Duration: 04-07-2019 to 20-07-2019</p>
+          <p className="tech">Web Development Basics<br/>
+          Technology(s) Used : HTML, CSS, JS</p>
         </div>
       </div>
     </div>

@@ -29,11 +29,18 @@
     .nav-links li a:hover{
         color: $colsec;
     }
+    .nav-links li a:active{
+        color: $colsec;
+    }
     @include respond(tab-port) {
         position: fixed;
         z-index: 5;
         background-color: $colprim;
         width: 100%;
+        img{
+            width: 12%;
+            height: 12%;
+        }
         .line{
             width: 30px;
             height: 3px;
@@ -52,11 +59,11 @@
             position: fixed;
             z-index: 2;
             margin: 0;
-            padding: 0;
+            padding-bottom: 10vh;
             justify-content: space-around;
             background-color: $colsec;
             color:white;
-            height: 101vh;
+            height: 90vh;
             width: 100%;
             flex-direction: column;
             clip-path: circle(10px at 115% 0%);
@@ -68,8 +75,8 @@
             }
         }
         .nav-links.open{
-            clip-path: circle(1000px at 90% 0%);
-            -webkit-clip-path: circle(1000px at 90% 0%);
+            clip-path: circle(1500px at 90% 0%);
+            -webkit-clip-path: circle(1500px at 90% 0%);
             pointer-events: all;
         }
         .nav-links li{

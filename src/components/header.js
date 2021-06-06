@@ -11,7 +11,6 @@ const Header = () => {
          links.forEach(link =>{
             if(link != null){
                link.classList.toggle("fade");
-               console.log(link.classList);
             }
          });
       }
