@@ -64,7 +64,7 @@ function Home() {
       </div>
       <div id="contact" className="contact">
         <p><img src={hand} alt="hand"/>
-        Have a new project or just say hi?</p>
+        Have a new project just say hi?</p>
         Get in touch &#8594;
         <form id="submit-form" className="formsubmit">
           <input type="hidden" name="_subject" value="New submission on profile!"/>
