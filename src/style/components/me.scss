@@ -1,0 +1,196 @@
+h1{
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    @include respond(tab-port) {
+        font-size: 28px;
+    }
+}
+.butto{
+    margin-bottom: 1%;
+    margin-right: 3%;
+    border: 1px solid $colsec;
+    padding: 0;
+    text-align: center;
+    width: 150px;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    font-weight: normal;
+    text-decoration: none;
+    border-radius: 3px;
+    outline: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    top: -3px;
+    transform: translateY(0px);
+    position: relative;
+    box-shadow: inset 0 30px 30px -15px rgba(255,255,255,.1), inset 0 0 0 1px rgba(255,255,255,.3), inset 0 1px 20px rgba(0,0,0,0), 0 3px 0 $colsec, 0 3px 2px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.1), 0 10px 20px rgba(0,0,0,.1);
+    background: $colsec;
+    color: white;
+    text-shadow: 0 1px 0 rgba(0,0,0,.3);
+    transition: 150ms all;
+    -webkit-transition: 150ms all;
+    -moz-transition: 150ms all;
+    -o-transition: 150ms all;
+    -ms-transition: 150ms all;
+  }
+  
+.butto:active {
+    transform: translateY(3px);
+    box-shadow: inset 0 16px 2px -15px rgba(0,0,0,0), inset 0 0 0 1px rgba(255,255,255,.15), inset 0 1px 20px rgba(0,0,0,.1), 0 0 0 #0f988e, 0 0 0 2px rgba(255,255,255,.5), 0 0 0 rgba(0,0,0,0), 0 0 0 rgba(0,0,0,0);
+}
+.me{
+    .imgline{
+        display: flex;
+        width: 80%;
+        align-items: stretch;
+        margin-bottom: 4%;
+    }
+    .pic{
+        width: 22%;
+        height: auto;
+        margin: 2% 9% 6% 8%;
+        border-radius: 9%;
+    }
+    justify-content: center;
+    .box{
+        background-color: $colprim;
+        box-shadow: inset -2px -4px 21px -1px rgba(71, 87, 225, 0.25);
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 3%;
+        padding-top: 3%;
+        margin-bottom: 2%;
+        width: 90%;
+        z-index: 2;
+        .medetail{
+            display: flex;
+            flex-direction: column;
+            .lboxes{
+                display: flex;
+                flex-wrap: wrap;
+                align-content: center;
+                align-items: baseline;
+            .linkbox{
+                display: flex;
+                justify-content: space-between;
+                margin-top: 4%;
+                margin-right: 7%;
+                .linkbotton{
+                    @extend .butto;
+                }
+            }}
+            .name{
+                @extend h1;
+                color: $colsec;
+                margin: 0;
+                padding: 0;
+                font-size: 65px;
+                font-weight: 800;
+                line-height: 1;
+            }
+            .subname{
+                margin: 0;
+                padding: 0;
+                font-size: 30px;
+                font-weight:550;
+            }
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 2% 1% 2% 6%;
+        }
+    }
+    display: flex;
+    flex-direction: row;
+    svg{
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        @include respond(tab-port) {
+            max-width: 80%;
+            height: 30%;
+        }
+    }
+    #one{
+        width: 50%;
+        z-index: 1;
+        align-self: center;
+        left: 0;
+        @include respond(tab-port) {
+            position: absolute;
+            height: 25%;
+        }
+    }
+}
+@include respond(tab-land) {
+    .me .box .medetail{
+        width: 60%;
+        margin-left: 3%;
+        .subname{
+            font-size: 25px;
+        }
+    }
+}
+@include respond(tab-port) {
+    .me .imgline{
+        justify-content: center;
+    }
+    .me .box{
+        display: flex;
+        justify-content: space-around;
+        align-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+        margin-top: 9%;
+        .medetail{
+            width:100%;
+            align-items: center;
+            .lboxes .linkbox{
+                margin-right: 0;
+                .linkbotton{
+                    width: 100px;
+                }
+            }
+            .name{
+                font-size: 36px;
+            }
+        }
+    }
+    .me .pic{
+        width: 28%;
+        height: auto;
+    }
+}
+@include respond(phone) {
+    .butto{
+        width: 100%;
+    }
+    .me .box .medetail{
+        .lboxes .linkbox{
+            flex-direction: column;
+            .linkbotton
+            {
+                width: 100%;
+            }}
+        .name{
+            font-size: 30px;
+        }
+        .subname{
+            font-size: 20px;
+            margin-top: 0;
+            line-height: 90%;
+            text-align: center;
+        }
+        .imgline img{
+            flex-wrap: wrap;
+            width: 80%;
+            height: auto;
+        }
+    }
+}

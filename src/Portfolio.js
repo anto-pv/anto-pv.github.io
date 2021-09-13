@@ -13,14 +13,12 @@ import npm from './images/skills/npm.svg';
 import ps from './images/skills/ps.svg';
 import hml from './images/skills/hml.svg';
 import cs from './images/skills/cs.svg';
-import Meport from './components/meport';
 import p1h from './images/projects/p1h.png';
 import p1i from './images/projects/p1i.jpg';
 
 function Portfolio() {
   return (
     <div id="portfolio">
-      <Meport/>
       <div id ="projects" className = "blue">
         <h1>Projects</h1>
         <div className="content">

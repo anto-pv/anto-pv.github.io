@@ -1,5 +1,4 @@
 import React,{ useState } from 'react';
-import Me from './components/me';
 import hand from './images/contactimg.svg';
 import youtube from './images/social/youtube.svg';
 import linkedin from './images/social/linkedin.svg';
@@ -50,7 +49,6 @@ function Home() {
 
   return (
     <div id = "home">
-      <Me/>
       <div id ="about" className = "about">
         <div><p>
         I am <b>Anto P V</b>.
@@ -64,7 +62,7 @@ function Home() {
       </div>
       <div id="contact" className="contact">
         <p><img src={hand} alt="hand"/>
-        Have a new project just say hi?</p>
+        Have a new project or just say hi?</p>
         Get in touch &#8594;
         <form id="submit-form" className="formsubmit">
           <input type="hidden" name="_subject" value="New submission on profile!"/>
