@@ -1,7 +1,6 @@
 import React from 'react';
 import './style/App.scss';
 import {HashRouter as Router, Switch, Route} from 'react-router-dom';
-import Header from './components/header';
 import Meport from './components/meport';
 import Portfolio from './Portfolio';
 import Home from './Home';
