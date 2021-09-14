@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
-import icon from '../images/icon.jpg'
 
 const Header = () => {
    const hamger = ()=>{
@@ -19,7 +18,6 @@ const Header = () => {
 
    return(
    <div id="header">
-      <img src={icon} alt="logo"/>
       <div className="hamburger" onClick={hamger}>
          <div className="line"></div>
          <div className="line"></div>

@@ -45,6 +45,88 @@ h1{
     box-shadow: inset 0 16px 2px -15px rgba(0,0,0,0), inset 0 0 0 1px rgba(255,255,255,.15), inset 0 1px 20px rgba(0,0,0,.1), 0 0 0 #0f988e, 0 0 0 2px rgba(255,255,255,.5), 0 0 0 rgba(0,0,0,0), 0 0 0 rgba(0,0,0,0);
 }
 .me{
+    nav{
+        height: 10vh;
+        position: relative;
+    }
+    .line{
+        width: 40px;
+        height: 4px;
+        background-color: $colprim;
+        border: 1px solid $colsec;
+        margin:5px;
+    }
+    .hamburger{
+        position: fixed;
+        cursor: pointer;
+        right: 5%;
+        top: 5%;
+        transform: translate(-5%, -50%);
+        z-index: 6;
+    }
+    .nav-links{
+        a{
+            text-decoration: none;
+        }
+        padding: 10vh 0 10vh 0;
+        display: flex;
+        list-style: none; 
+        color: $textsec;
+        align-items: center;
+        position: fixed;
+        z-index: 4;
+        margin: 0;
+        justify-content: space-around;
+        background-color: $colsec;
+        height: 90vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(10px at 110% -10%);
+        -webkit-clip-path: circle(10px at 110% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+        li{
+            padding-bottom: 10%;
+        }
+        @include respond(tab-land) {
+            font-size: 25px;
+        }
+    }
+    .nav-links li a {
+        color: $textsec;
+        text-decoration: none;
+        font-size: 26px;
+        font-weight: 600;
+    }
+    .nav-links li a:hover{
+        color: $textprim;
+    }
+    .nav-links li a:active{
+        color: $colsec;
+    }
+    .nav-links.open{
+        clip-path: circle(150% at 90% 0%);
+        -webkit-clip-path: circle(150% at 90% 0%);
+        pointer-events: all;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .nav-links li:nth-child(1){
+        transition:  all 0.5s ease 0.4s;
+    }
+    .nav-links li:nth-child(2){
+        transition:  all 0.5s ease 0.4s;
+    }
+    .nav-links li:nth-child(3){
+        transition:  all 0.5s ease 0.4s;
+    }
+    .nav-links li:nth-child(4){
+        transition:  all 0.5s ease 0.4s;
+    }
+    li.fade{
+        opacity: 1;
+    }
     .imgline{
         display: flex;
         width: 80%;
@@ -57,14 +139,16 @@ h1{
         margin: 2% 9% 6% 8%;
         border-radius: 9%;
     }
-    justify-content: center;
     .box{
         background-color: $colprim;
         box-shadow: inset -2px -4px 21px -1px rgba(71, 87, 225, 0.25);
         display: flex;
         flex-direction: row;
+        align-items: center;
         padding-bottom: 3%;
-        padding-top: 3%;
+        padding-top: 4%;
+        margin: auto;
+        margin-top: 6%;
         margin-bottom: 2%;
         width: 90%;
         z-index: 2;

@@ -51,13 +51,13 @@ function Home() {
     <div id = "home">
       <div id ="about" className = "about">
         <div><p>
-        I am <b>Anto P V</b>.
-        Currently in 3<sup>rd</sup> year Computer Science Undergraduate at <b>Mar Athanasius College of Engineering, kothamangalam</b>.<br/>
-        I am Programmer, Web Developer with creative,analytical, dynamic, curious, strict in my purposes, with the
-        ability to work in a team, with service, persistent,
-        committed to the ability to adapt well to different environments
-        and situations. High sense of responsibility, interpersonal relationships, sense of leadership and willingness
-        to acquire new skills.
+        Hi, I'm <b>Anto P V</b>.<br/>
+        I am an 22-year-old from Kerala and currently a senior Computer Science student at Mar Athanasius College of Engineering. 
+        I do programming, developing and designing, and I absolutely love it.
+         I also like to contribute in team works and also vision to make a team.
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        In addition to being passionate about programming,
+         I am eager to challenge myself to do things I've never accomplished before and I strive to learn and improve on my skills every day (like, if you have constructive criticism and suggestion about this newly-made website, I'd be very glad to hear them :D).
         </p></div>
       </div>
       <div id="contact" className="contact">

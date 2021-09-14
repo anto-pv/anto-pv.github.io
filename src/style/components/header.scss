@@ -1,9 +1,5 @@
 #header{
     display: flex;
-    img{
-        width: 13%;
-        margin-left: 6%;
-    }
     .nav-links{
         a{
             text-decoration: none;
@@ -32,15 +28,10 @@
     .nav-links li a:active{
         color: $colsec;
     }
-    @include respond(tab-port) {
-        position: fixed;
-        z-index: 5;
-        background-color: $colprim;
-        width: 100%;
-        img{
-            width: 12%;
-            height: 12%;
-        }
+    position: fixed;
+    z-index: 5;
+    background-color: $colprim;
+    width: 100%;
         .line{
             width: 30px;
             height: 3px;
@@ -105,4 +96,3 @@
             opacity: 1;
         }
     }
-}

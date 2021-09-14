@@ -9,6 +9,7 @@
             color: $textprim;
             width: 70%;
             font-size: 21px;
+            font-weight: 500;
             border-radius: 20px;
             padding: 3% 3% 3% 3%;
             @include respond(tab-port) {
