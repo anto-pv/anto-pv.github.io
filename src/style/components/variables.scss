@@ -1,6 +1,6 @@
 $fontfam : 'Roboto', sans-serif;
 $colprim: #ffffff;
-$colsec: #5C69E5;
+$colsec: #c1a895;
 $textprim: #000000;
 $textsec: #ffffff;
 @mixin maintext() {
@@ -9,7 +9,7 @@ $textsec: #ffffff;
     font-weight: bold;
     font-size: 48px;
     line-height: 56px;
-    color: #007CC7;
+    color: #c1a895;
     margin-top: 1%;
 }
 @mixin resp() {
