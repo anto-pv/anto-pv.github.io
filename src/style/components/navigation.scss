@@ -1,0 +1,98 @@
+.main-navigation {
+  width: 100%;
+  padding: 1.5rem 0;
+  background-color: $colprim;
+  
+  .nav-container {
+    @include container();
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .nav-logo {
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: $textprim;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    
+    &:hover {
+      opacity: 0.7;
+    }
+    
+    @include respond(phone) {
+      font-size: 1rem;
+    }
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    
+    @include respond(tab-port) {
+      gap: 0.5rem;
+    }
+    
+    @include respond(phone) {
+      gap: 0.25rem;
+      font-size: 0.9rem;
+    }
+    
+    li {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .nav-link {
+      color: $textprim;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 400;
+      position: relative;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: color 0.2s ease;
+      
+      .nav-link-bg {
+        position: absolute;
+        inset: 0;
+        background-color: #f5f5f5;
+        border-radius: 6px;
+        z-index: 0;
+        transform: none;
+        transform-origin: 50% 50% 0px;
+        opacity: 0;
+        transition: opacity 0.2s ease, background-color 0.2s ease;
+      }
+      
+      .nav-link-text {
+        position: relative;
+        z-index: 1;
+      }
+      
+      &:hover {
+        .nav-link-bg {
+          opacity: 1;
+          background-color: #f5f5f5;
+        }
+      }
+      
+      &.active {
+        .nav-link-bg {
+          opacity: 1;
+          background-color: #e5e5e5;
+        }
+      }
+    }
+  }
+}
+

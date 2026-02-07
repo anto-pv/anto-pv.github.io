@@ -1,13 +1,35 @@
 .sitemap{
+    @include container();
     display: flex;
     flex-direction: row;
-    padding: 5%  10%  10% 10%;
+    padding: 3rem 0;
     justify-content: space-between;
-    .sitelaink{
-        text-decoration: none;
-        color: $textprim;
+    align-items: center;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 4rem;
+    
+    @include respond(tab-port) {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
     }
-    .sitelaink:hover{
-        color: $colsec;
+    
+    .sitemap-left {
+        color: $textprim;
+        font-size: 0.9rem;
+        opacity: 0.7;
+    }
+    
+    .sitemap-right {
+        .sitemap-link {
+            text-decoration: none;
+            color: $textprim;
+            font-size: 0.9rem;
+            transition: opacity 0.2s ease;
+            
+            &:hover {
+                opacity: 0.7;
+            }
+        }
     }
 }

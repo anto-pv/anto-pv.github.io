@@ -1,0 +1,82 @@
+.links-page {
+  min-height: calc(100vh - 200px);
+  padding: 4rem 0;
+  
+  .links-container {
+    @include container();
+    
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 0 0 3rem 0;
+      text-align: center;
+      color: $textprim;
+      
+      @include respond(tab-port) {
+        font-size: 2rem;
+      }
+      
+      @include respond(phone) {
+        font-size: 1.75rem;
+      }
+    }
+    
+    .links-content {
+      p {
+        font-size: 1.1rem;
+        color: $textprim;
+        opacity: 0.8;
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+    }
+    
+    .links-section {
+      margin-bottom: 3rem;
+      
+      h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 0 0 1.5rem 0;
+        color: $textprim;
+        
+        @include respond(phone) {
+          font-size: 1.25rem;
+        }
+      }
+      
+      .links-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        
+        @include respond(phone) {
+          grid-template-columns: 1fr;
+        }
+        
+        .link-item {
+          display: block;
+          padding: 1rem 1.5rem;
+          background-color: #f5f5f5;
+          color: $textprim;
+          text-decoration: none;
+          border-radius: 6px;
+          transition: all 0.2s ease;
+          text-align: center;
+          font-weight: 500;
+          
+          &:hover {
+            background-color: #e5e5e5;
+            transform: translateY(-2px);
+          }
+          
+          &:focus {
+            outline: 2px solid #2563eb;
+            outline-offset: 2px;
+          }
+        }
+      }
+    }
+  }
+}
+

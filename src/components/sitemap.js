@@ -1,13 +1,15 @@
 import React from 'react';
-import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
+import { personalInfo } from '../data/config';
 
 const SiteMap = () => (
    <div className="sitemap">
-         <b>Anto PV@2022</b>
-         <ul><b><u>Site map</u></b>
-            <HashLink className="sitelaink" to="/#header"><li>Home</li></HashLink>
-            <HashLink className="sitelaink" to= "/portfolio#header"><li>Portfolio</li></HashLink>
-         </ul>
+      <div className="sitemap-left">
+         © 2026 {personalInfo.name}. All rights reserved.
+      </div>
+      <div className="sitemap-right">
+         <Link to="/links" className="sitemap-link">Links</Link>
+      </div>
    </div>
 );
 

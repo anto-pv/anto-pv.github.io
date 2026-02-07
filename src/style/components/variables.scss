@@ -3,6 +3,11 @@ $colprim: #ffffff;
 $colsec: #c1a895;
 $textprim: #000000;
 $textsec: #ffffff;
+
+// Container widths (constrained layout)
+$container-max-width: 800px;
+$container-max-width-wide: 1000px;
+$container-padding: 1.5rem;
 @mixin maintext() {
     font-family: Roboto;
     font-style: normal;
@@ -24,5 +29,21 @@ $textsec: #ffffff;
     @include respond(phone) {
         font-size: 8px;
         padding: 0 0 7% 5%;
+    }
+}
+
+// Constrained container mixin (centered content with max-width)
+@mixin container($max-width: $container-max-width) {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 $container-padding;
+    width: 100%;
+    
+    @include respond(tab-port) {
+        padding: 0 1rem;
+    }
+    
+    @include respond(phone) {
+        padding: 0 1rem;
     }
 }

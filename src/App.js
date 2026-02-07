@@ -1,23 +1,44 @@
 import React from 'react';
 import './style/App.scss';
-import {HashRouter as Router, Switch, Route} from 'react-router-dom';
-import Meport from './components/meport';
-import Portfolio from './Portfolio';
+import {HashRouter as Router, Routes, Route} from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import ErrorBoundary from './components/ErrorBoundary';
+import Navigation from './components/Navigation';
 import Home from './Home';
+import Posts from './Posts';
+import Portfolio from './Portfolio';
+import About from './About';
+import Links from './Links';
 import SiteMap from './components/sitemap';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Meport/>
-        <Switch>
-          <Route path="/" exact component= {Home}/>
-          <Route path="/portfolio" exact component= {Portfolio}/>
-        </Switch>
-        <SiteMap/>
-      </div>
-    </Router>
+    <ErrorBoundary>
+      <Router>
+        <div className="App">
+          <Navigation/>
+          <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/posts" element={<Posts/>}/>
+            <Route path="/portfolio" element={<Portfolio/>}/>
+            <Route path="/about" element={<About/>}/>
+            <Route path="/links" element={<Links/>}/>
+          </Routes>
+          <SiteMap/>
+          <ToastContainer 
+            position="top-right"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
+        </div>
+      </Router>
+    </ErrorBoundary>
   );
 }
 

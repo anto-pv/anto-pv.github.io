@@ -1,21 +1,31 @@
 #portfolio{
+    // Container wrapper
+    .container {
+        @include container();
+    }
+    
     .blue{
         width: 100%;
         display: flex;
         flex-direction: column;
-        background-color: $colsec;
         justify-content: space-around;
         align-items: center;
-        color: $textsec;
+        color: $textprim;
+        padding: 3rem 0;
+        
+        > h1 {
+            @include container();
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
         div{
             display: flex;
             flex-direction: column;
-            width: 80%;
-            background-color: $colprim;
+            @include container($container-max-width-wide);
             color: $textprim;
-            margin: 0 4% 3% 4%;
-            border-radius: 20px;
-            padding: 2% 0 2% 0;
+            margin: 0 auto 2rem auto;
+            padding: 2rem 0;
             align-content: center;
             justify-content: center;
             align-items: center;
@@ -37,24 +47,27 @@
             }
         }
         .expcontent{
-            width: 91%;
+            @include container();
             display: flex;
-            display: -webkit-flex;
+            flex-direction: column;
             align-items: flex-start;
-            font-size: 25px;
-            line-height: 150%;
+            font-size: 20px;
+            line-height: 1.8;
+            padding: 2rem 0;
+            
             .point{
-                background-color: $colsec;
+                color: $colsec;
+                margin-right: 0.5rem;
             }
             .company{
                 font-weight: bolder;
-                margin:  0 0 0 8%;
+                margin: 0 0 1rem 0;
             }
             .post{
-                margin:  0 0 0 8%;
+                margin: 0 0 0.5rem 0;
             }
             .tech{
-                margin:  0 0 0 8%;
+                margin: 1rem 0 0 0;
             }
         }
     }
@@ -62,18 +75,31 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        padding: 3rem 0;
+        
+        > h1 {
+            @include container();
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
         div{
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            background-color: $colsec;
-            margin: 0 4% 3% 4%;
-            border-radius: 20px;
-            padding: 2% 0 2% 0;
+            @include container();
+            padding: 2rem 0;
+            gap: 1.5rem;
+            
             img{
-                margin: 1% 6% 1% 6%;
-                width: 10%;
+                width: 48px;
+                height: 48px;
+                transition: transform 0.2s ease;
+                
+                &:hover {
+                    transform: scale(1.1);
+                }
             }
         }
     }

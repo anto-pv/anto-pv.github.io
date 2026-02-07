@@ -1,84 +1,145 @@
 import React, { useState } from 'react';
-import hand from './images/contactimg.svg';
-import youtube from './images/social/youtube.svg';
-import linkedin from './images/social/linkedin.svg';
-import github from './images/social/github.svg';
-import instagram from './images/social/instagram.svg';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-toast.configure()
+import { Link } from 'react-router-dom';
+import { personalInfo, socialLinks } from './data/config';
+import linkedinIcon from './images/social/linkedin.svg';
+import githubIcon from './images/social/github.svg';
+import instagramIcon from './images/social/instagram.svg';
 
 function Home() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [loader, setLoader] = useState(false);
-  const submit = async (e) => {
+  const [email, setEmail] = useState('');
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const handleNewsletterSubmit = (e) => {
     e.preventDefault();
-    if (name === "" || email === "" || message === "") {
-      console.log("empty");
-      toast.info('Fields are empty');
-    }
-    else {
-      setLoader(true)
-      console.log(name, message, email);
-      await fetch('https://formsubmit.co/ajax/antopv833@gmail.com', {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          name: name,
-          email: email,
-          message: message
-        })
-      })
-        .then((response) => {
-          if (response.status === 200) {
-            toast.info("Sent! I will reply soon...")
-            setLoader(false);
-            return response.json();
-          } else if (response.status === 408) {
-            toast.info("Something Went Wrong..Could you try once again.");
-            setLoader(false);
-          }
-        })
-    };
+    // Newsletter subscription logic here
+    setIsSubscribed(true);
+    setEmail('');
+    setTimeout(() => setIsSubscribed(false), 3000);
   };
 
   return (
-    <div id="home">
-      <div id="about" className="about">
-        <div><p>
-          Hi, I'm <b>Anto P V</b>.<br />
-          User
-          Greetings, I'm Anto P V, a 24-year-old backend and full-stack developer based in Kerala. Currently, I'm passionately contributing my skills as an Associate Software Engineer at KeyValye Software Systems, Kochi.
-          <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          In addition to being passionate about programming,
-          I am eager to challenge myself to do things I've never accomplished before and I strive to learn and improve on my skills every day (like, if you have constructive criticism and suggestion about this newly-made website, I'd be very glad to hear them :D).
-        </p></div>
+    <main className="home-page">
+      <div className="home-container">
+        {/* Main Heading */}
+        <h1 className="home-heading">{personalInfo.name}</h1>
+        
+        {/* Bio */}
+        <p className="home-bio">
+          {personalInfo.bio}
+        </p>
+        
+        {/* Call to Action */}
+        <p className="home-cta">
+          Reach out anytime to chat.
+        </p>
+        
+        {/* Social Icons */}
+        <div className="home-social-icons">
+          <a 
+            href={`mailto:antopv833@gmail.com`}
+            aria-label="Email"
+            className="social-icon"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </a>
+          <a 
+            href="https://x.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="X (Twitter)"
+            className="social-icon"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          <a 
+            href={socialLinks.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="social-icon"
+          >
+            <img src={linkedinIcon} alt="LinkedIn" />
+          </a>
+          <a 
+            href={socialLinks.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="social-icon"
+          >
+            <img src={githubIcon} alt="GitHub" />
+          </a>
+          <a 
+            href={socialLinks.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="social-icon"
+          >
+            <img src={instagramIcon} alt="Instagram" />
+          </a>
+        </div>
+        
+        {/* Action Buttons */}
+        <div className="home-actions">
+          <a 
+            href="https://cal.eu/anto-pv/coffee"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="home-button primary"
+          >
+            Quick Chat?
+          </a>
+          <Link 
+            to="/posts"
+            className="home-button secondary"
+          >
+            Read posts
+          </Link>
+        </div>
+        
+        {/* Newsletter Section */}
+        <div className="newsletter-section">
+          <div className="newsletter-separator"></div>
+          <h3 className="newsletter-heading">
+            <span className="newsletter-icon">✈️</span>
+            Subscribe to my newsletter
+          </h3>
+          <p className="newsletter-description">
+            Posts and updates on what I'm building, delivered to your inbox.
+          </p>
+          <form 
+            className="newsletter-form"
+            onSubmit={handleNewsletterSubmit}
+          >
+            <input
+              type="email"
+              placeholder="you@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="newsletter-input"
+              required
+            />
+            <button 
+              type="submit"
+              className="newsletter-button"
+            >
+              Subscribe
+            </button>
+          </form>
+          {isSubscribed && (
+            <p className="newsletter-success">Thanks for subscribing!</p>
+          )}
+        </div>
       </div>
-      <div id="contact" className="contact">
-        <p><img src={hand} alt="hand" />
-          Have a new project or just say hi?</p>
-        Get in touch &#8594;
-        <form id="submit-form" className="formsubmit">
-          <input type="hidden" name="_subject" value="New submission on profile!" />
-          <input type="text" className="fname" value={name} placeholder="Name" onChange={(e) => setName(e.target.value)} required />
-          <input className="fname" type="email" value={email} placeholder="Email" required onChange={(e) => setEmail(e.target.value)} />
-          <textarea className="tname" value={message} placeholder="Message" required onChange={(e) => setMessage(e.target.value)} />
-          <button type="submit" onClick={submit} value="Submit" style={{ background: loader ? "rgb(51, 255, 102)" : "#ffffff" }}> Submit</button>
-        </form>
-      </div>
-      <div className="social">
-        <a target='_blank' rel="noreferrer" href="https://www.linkedin.com/in/anto-pv"><img src={linkedin} alt="linkedin" /></a>
-        <a target='_blank' rel="noreferrer" href="https://github.com/anto-pv"><img src={github} alt="linkedin" /></a>
-        <a target='_blank' rel="noreferrer" href="https://www.instagram.com/anto_p_v"><img src={instagram} alt="linkedin" /></a>
-        <a target='_blank' rel="noreferrer" href="https://www.youtube.com/channel/UC_9r3s3zO9lHgtKAvBX-5Aw"><img src={youtube} alt="linkedin" /></a>
-      </div>
-    </div>
+    </main>
   );
 }
 
 export default Home;
+
