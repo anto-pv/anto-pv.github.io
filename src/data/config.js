@@ -2,12 +2,42 @@
 export const personalInfo = {
   name: "Anto P V",
   title: "Developer, Designer, Engineer.",
+  tagline: "Software Engineer @ KeyValue Software Systems",
+  profileImage: "/favicon.svg",
   age: 24,
   location: "Kerala",
   role: "Associate Software Engineer",
   company: "KeyValye Software Systems, Kochi",
-  bio: "I’m a software engineer focused on backend architecture and agentic AI systems. I’ve worked across AI-driven automation, cloud platforms, and large-scale backend systems, and I write about AI systems and life here.",
-  resumeUrl: "https://drive.google.com/file/d/1d4vdYvNsdjmxcTPGAOrfidq6WEpLUAJ1/view?usp=sharing"
+  bio: "I'm a software engineer focused on backend architecture and agentic AI systems. I've worked across AI-driven automation, cloud platforms, and large-scale backend systems, and I write about AI systems and life here.",
+  aboutBio: "AI Engineer and Software Engineer (3 years) specializing in backend architecture and agentic AI systems, with a strong track record of designing production-grade AI workflows with real business impact. Sole architect behind AI-powered campaign automation for Siren and contributor to the conversational AI platform supporting shopper experiences used by tens of millions of users across U.S. healthcare and retail. Known for system-level thinking, ownership, and building reliable, scalable systems backed by clean architecture.",
+  resumeUrl: "https://drive.google.com/file/d/1d4vdYvNsdjmxcTPGAOrfidq6WEpLUAJ1/view?usp=sharing",
+  
+  // About page specific data
+  skills: {
+    "Core": ["LLM-based Workflows","LangGraph","RAG","FastAPI","NestJs","Spring Boot","PostgreSQL"],
+    "Infra": ["GCP(GCS, CSQL)","AWS (ECS, S3, Lambda, SQS, SNS)","Docker","Kubernetes","GitHub Actions","Docker"],
+    "Platforms": ["Langsmith","Hugging Face","Wati"]
+  },
+  icebreakers: [
+    "Clash of Clans",
+    "Marvel Movies",
+    "IPL",
+    "Food",
+    "Football",
+    "Travel"
+  ],
+  experience: [
+    {
+      title: "...........",
+      status: "Current",
+      company: "........",
+      description: ".............."
+    },
+  ],
+  highlights: [
+    "......................",
+   
+  ]
 };
 
 // Social Media Links

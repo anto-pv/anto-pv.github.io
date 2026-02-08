@@ -4,12 +4,6 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:  # Allows manual triggering
-
-permissions:
-  contents: write  # Required to push to gh-pages branch
-  pages: write
-  id-token: write
 
 jobs:
   build-and-deploy:
