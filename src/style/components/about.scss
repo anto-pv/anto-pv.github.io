@@ -52,9 +52,9 @@
   }
   
   .about-name {
-    font-size: 2rem;
-    font-weight: 700;
-    margin: 0 0 0.5rem 0;
+    font-size: $name-font-size; // text-xl (1.25rem)
+    font-weight: 600; // font-semibold
+    margin: 0 0 0.25rem 0; // mb-1
     color: $textprim;
     line-height: 1.2;
     
@@ -64,7 +64,7 @@
   }
   
   .about-tagline {
-    font-size: 0.875rem; // text-sm
+    font-size: $text-sm; 
     color: rgba(0, 0, 0, 0.6); // text-muted-foreground
     margin: 0;
     line-height: 1.625; // leading-relaxed
@@ -74,7 +74,7 @@
     margin: 0 0 3rem 0;
     
     p {
-      font-size: 0.875rem; // text-sm
+      font-size: $text-sm;
       line-height: 1.625; // leading-relaxed
       color: rgba(0, 0, 0, 0.6); // text-muted-foreground
       margin: 0;
@@ -90,7 +90,7 @@
   }
   
   .about-section-title {
-    font-size: 0.875rem; // text-sm
+    font-size: $text-sm;
     font-weight: 600;
     margin: 0 0 1.5rem 0;
     color: $textprim;
@@ -110,7 +110,7 @@
   }
   
   .skill-category-name {
-    font-size: 0.875rem; // text-sm
+    font-size: $text-sm;
     font-weight: 600;
     color: $textprim;
     margin: 0;
@@ -191,27 +191,27 @@
   }
   
   .experience-title {
-    font-size: 0.875rem; // text-sm
+    font-size: $text-sm;
     font-weight: 600;
     color: $textprim;
     margin: 0;
   }
   
   .experience-status {
-    font-size: 0.875rem; // text-sm
+    font-size: $text-sm;
     color: rgba(0, 0, 0, 0.6); // text-muted-foreground
     font-weight: 400;
   }
   
   .experience-company {
-    font-size: 0.875rem; // text-sm
+    font-size: $text-sm;
     color: rgba(0, 0, 0, 0.6); // text-muted-foreground
     margin: 0;
     line-height: 1.625; // leading-relaxed
   }
   
   .experience-description {
-    font-size: 0.875rem; // text-sm
+    font-size: $text-sm;
     color: rgba(0, 0, 0, 0.6); // text-muted-foreground
     margin: 0.5rem 0 0 0;
     line-height: 1.625; // leading-relaxed
@@ -228,7 +228,7 @@
   }
   
   .highlight-item {
-    font-size: 0.875rem; // text-sm
+    font-size: $text-sm;
     color: rgba(0, 0, 0, 0.6); // text-muted-foreground
     line-height: 1.625; // leading-relaxed
     padding-left: 1.5rem;

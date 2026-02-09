@@ -28,15 +28,25 @@ export const personalInfo = {
   ],
   experience: [
     {
-      title: "...........",
+      title: "Senior Software Development Engineer",
       status: "Current",
-      company: "........",
-      description: ".............."
+      company: "CVS, via Truefoundry",
+      description: "Designing and implementing agentic AI workflows for the CVS shopper assistant, supporting millions of users across U.S. healthcare and retail."
     },
+    {
+      title: "Software Engineer",
+      status: "Past",
+      company: "KeyValue Software Systems",
+      description: "Developed backend services for cloud-based applications, ensuring scalability and reliability."
+    }
   ],
   highlights: [
-    "......................",
-   
+    "Web Developer, IEEE MACE Student Branch, Kerala Section",
+    "Siemens Mobility Project Manager Job Simulation on Forage: Managed KPIs and dashboards for rail infrastructure projects using analytical skills and data visualization (May 2024).",
+    "Completed Google Professional IT Support provided by Google.",
+    "Successfully finished Programming Foundations with JavaScript, HTML, CSS by Duke University.",
+    "Completed Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning by Deeplearning.ai.",
+    "Achieved certification in Using Python for Research offered by HarvardX.",
   ]
 };
 
