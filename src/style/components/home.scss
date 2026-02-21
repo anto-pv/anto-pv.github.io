@@ -3,20 +3,48 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem 0;
+  padding: 1rem 0;
   
   .home-container {
     @include container();
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .home-profile-image-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .home-profile-image {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 0 0 1rem 0;
+    display: block;
+    
+    @include respond(phone) {
+      width: 3rem;
+      height: 3rem;
+    }
   }
   
   .home-heading {
-    font-size:  $name-font-size;
-    font-weight: 700;
-    margin: 0 0 2rem 0;
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 0 0 1rem 0;
     color: $textprim;
     line-height: 1.2;
     
+    @include respond(phone) {
+      font-size: 1rem;
+    }
   }
   
   .home-bio {
@@ -25,8 +53,6 @@
     color: $textprim;
     margin: 0 0 2rem 0;
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
     
   }
   
@@ -40,7 +66,7 @@
   .home-social-icons {
     display: flex;
     gap: 1.25rem;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin: 0 0 2rem 0;
     
@@ -74,9 +100,9 @@
   .home-actions {
     display: flex;
     gap: 1rem;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     
     .home-button {
       display: inline-block;
@@ -88,7 +114,7 @@
       font-weight: 500;
       
       &.primary {
-        background-color: #2563eb;
+        background-color: $action-color;
         color: #ffffff;
         border: none;
         
@@ -115,19 +141,16 @@
   }
   
   .newsletter-section {
-    margin-top: 4rem;
-    padding-top: 3rem;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 2rem;
+    padding-top: 2rem;
     
-    .newsletter-separator {
+    .scribble-line {
       width: 100%;
-      height: 2px;
+      height: 12px;
       margin-bottom: 2rem;
-      background-image: url("data:image/svg+xml,%3Csvg width='100' height='2' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,1 Q25,0 50,1 T100,1' stroke='%23e0e0e0' fill='none' stroke-width='1'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='12' viewBox='0 0 200 12'%3E%3Cpath d='M0 6 C 3 4, 7 8, 12 5 S 18 7, 25 6 S 33 4, 40 7 S 48 5, 55 6 S 62 8, 70 5 S 78 7, 85 6 S 93 4, 100 7 S 108 5, 115 6 S 123 8, 130 5 S 138 7, 145 6 S 153 4, 160 7 S 168 5, 175 6 S 183 8, 190 5 S 198 7, 200 6' stroke='%23d1d5db' fill='none' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
       background-repeat: repeat-x;
-      background-size: 100px 2px;
+      background-size: 200px 12px;
       opacity: 0.5;
     }
     
@@ -138,7 +161,7 @@
       color: $textprim;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 0.5rem;
       
       .newsletter-icon {
@@ -176,8 +199,8 @@
       background-color: $colprim;
       
       &:focus {
-        border-color: #2563eb;
-        outline: 2px solid #2563eb;
+        border-color: $action-color;
+        outline: 2px solid $action-color;
         outline-offset: 2px;
       }
       
@@ -189,7 +212,7 @@
     .newsletter-button {
       padding: 0.75rem 1.5rem;
       font-size: 1rem;
-      background-color: #2563eb;
+      background-color: $action-color;
       color: #ffffff;
       border: none;
       border-radius: 6px;

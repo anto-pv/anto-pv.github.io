@@ -1,8 +1,6 @@
 .main-navigation {
   padding: 1.5rem 0;
   background-color: $colprim;
-  max-width: 40rem;
-  margin: 0 auto;
   
   .nav-container {
     @include container();

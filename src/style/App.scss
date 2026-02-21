@@ -4,7 +4,6 @@
 @import './components/sitemap.scss';
 @import './components/home.scss';
 @import './components/links.scss';
-@import './components/portfolio.scss';
 @import './components/about.scss';
 
 .App{
@@ -12,6 +11,8 @@
     color: $textprim;
     font-family: 'Lexend', ui-sans-serif, system-ui, sans-serif;
     min-height: 100vh;
+    max-width: 40rem;
+    margin: 0 auto;
 }
 
 .error-boundary {

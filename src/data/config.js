@@ -10,7 +10,7 @@ export const personalInfo = {
   company: "KeyValye Software Systems, Kochi",
   bio: "I'm a software engineer focused on backend architecture and agentic AI systems. I've worked across AI-driven automation, cloud platforms, and large-scale backend systems, and I write about AI systems and life here.",
   aboutBio: "AI Engineer and Software Engineer (3 years) specializing in backend architecture and agentic AI systems, with a strong track record of designing production-grade AI workflows with real business impact. Sole architect behind AI-powered campaign automation for Siren and contributor to the conversational AI platform supporting shopper experiences used by tens of millions of users across U.S. healthcare and retail. Known for system-level thinking, ownership, and building reliable, scalable systems backed by clean architecture.",
-  resumeUrl: "https://drive.google.com/file/d/1d4vdYvNsdjmxcTPGAOrfidq6WEpLUAJ1/view?usp=sharing",
+  resumeUrl: "https://drive.google.com/file/d/1ThHqsT1hAMixCb9wGIASQXrGQImNmVc-/view?usp=sharing",
   
   // About page specific data
   skills: {
@@ -114,12 +114,4 @@ export const experiences = [
   }
 ];
 
-// Navigation Links
-export const navigationLinks = [
-  { path: "/", label: "Home" },
-  { path: "/portfolio", label: "Portfolio" },
-  { path: "/portfolio#projects", label: "Projects", hash: true },
-  { path: "/portfolio#skills", label: "Skills", hash: true },
-  { path: "/portfolio#experiences", label: "Experiences", hash: true }
-];
 

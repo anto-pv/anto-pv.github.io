@@ -6,7 +6,6 @@ import ErrorBoundary from './components/ErrorBoundary';
 import Navigation from './components/Navigation';
 import Home from './Home';
 import Posts from './Posts';
-import Portfolio from './Portfolio';
 import About from './About';
 import Links from './Links';
 import SiteMap from './components/sitemap';
@@ -20,7 +19,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/posts" element={<Posts/>}/>
-            <Route path="/portfolio" element={<Portfolio/>}/>
             <Route path="/about" element={<About/>}/>
             <Route path="/links" element={<Links/>}/>
           </Routes>
